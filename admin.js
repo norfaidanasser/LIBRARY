@@ -15,8 +15,6 @@ import {
   doc 
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-
-// 🔥 YOUR FIREBASE CONFIG (REPLACE THIS)
 const firebaseConfig = {
   apiKey: "AIzaSyAx38EXoudizcyiHRsIz7oLR3VmRboo9Dk",
   authDomain: "neulibrary-2845c.firebaseapp.com",
@@ -24,15 +22,10 @@ const firebaseConfig = {
 };
 
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-
-// =============================
-// 🔐 ADMIN LOGIN
-// =============================
 window.adminLogin = function () {
   const email = document.getElementById('adminEmail').value;
   const password = document.getElementById('adminPassword').value;
@@ -50,20 +43,12 @@ window.adminLogin = function () {
     });
 };
 
-
-// =============================
-// 🚪 LOGOUT
-// =============================
 window.logoutAdmin = function () {
   signOut(auth).then(() => {
     window.location.href = "admin_login.html";
   });
 };
 
-
-// =============================
-// 🔒 PROTECT DASHBOARD
-// =============================
 onAuthStateChanged(auth, (user) => {
   if (!user) {
     if (window.location.pathname.includes("admin_dashboard.html")) {
@@ -72,10 +57,6 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-
-// =============================
-// 📥 LOAD VISITOR LOGS (FIRESTORE)
-// =============================
 window.loadVisitorLogs = async function () {
   const tbody = document.getElementById('visitorLogTable');
   if (!tbody) return;
@@ -105,9 +86,6 @@ window.loadVisitorLogs = async function () {
 };
 
 
-// =============================
-// 🚫 BLOCK VISITOR (UPDATE FIRESTORE)
-// =============================
 window.blockVisitor = async function (id) {
   const visitorRef = doc(db, "visitors", id);
 
@@ -118,10 +96,6 @@ window.blockVisitor = async function (id) {
   loadVisitorLogs();
 };
 
-
-// =============================
-// 📊 FILTER STATS (BASIC)
-// =============================
 window.filterStats = async function () {
   const querySnapshot = await getDocs(collection(db, "visitors"));
 
@@ -135,10 +109,6 @@ window.filterStats = async function () {
   document.getElementById('monthVisitors').textContent = total;
 };
 
-
-// =============================
-// ➕ ADD VISITOR (OPTIONAL)
-// =============================
 window.addVisitor = async function (visitorData) {
   await addDoc(collection(db, "visitors"), {
     ...visitorData,
@@ -148,10 +118,6 @@ window.addVisitor = async function (visitorData) {
   loadVisitorLogs();
 };
 
-
-// =============================
-// 🚀 AUTO LOAD WHEN DASHBOARD OPENS
-// =============================
 if (document.getElementById('visitorLogTable')) {
   loadVisitorLogs();
 }
