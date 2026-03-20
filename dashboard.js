@@ -9,7 +9,6 @@ import {
     updateDoc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-// Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyAx38EXoudizcyiHRsIz7oLR3VmRboo9Dk",
   authDomain: "neulibrary-2845c.firebaseapp.com",
@@ -19,7 +18,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// ================= NAVIGATION =================
 window.showSection = function(sectionId, el){
     document.querySelectorAll(".contentSection").forEach(s => s.classList.remove("active"));
     document.querySelectorAll(".navLinks li").forEach(l => l.classList.remove("active"));
@@ -27,11 +25,9 @@ window.showSection = function(sectionId, el){
     el.classList.add("active");
 };
 
-// ================= GLOBAL DATA =================
 let allUsers = [];
 let allLogs = [];
 
-// ================= REALTIME USERS =================
 onSnapshot(collection(db,"users"), (snapshot)=>{
     allUsers = [];
     snapshot.forEach(doc => {
@@ -43,7 +39,6 @@ onSnapshot(collection(db,"users"), (snapshot)=>{
     renderCharts();
 });
 
-// ================= REALTIME LOGS =================
 onSnapshot(query(collection(db,"logs"), orderBy("loginTime","desc")), (snapshot)=>{
     allLogs = [];
     snapshot.forEach(doc => {
@@ -54,7 +49,6 @@ onSnapshot(query(collection(db,"logs"), orderBy("loginTime","desc")), (snapshot)
     renderCharts();
 });
 
-// ================= STATS =================
 function loadStats(){
     let visitors=0, students=0, faculty=0;
 
@@ -71,7 +65,6 @@ function loadStats(){
     document.getElementById("totalVisits").textContent = allUsers.length;
 }
 
-// ================= USERS TABLE + BLOCK =================
 function loadUsers(){
     const table = document.getElementById("usersTable");
     table.innerHTML = "";
@@ -94,14 +87,12 @@ function loadUsers(){
     });
 }
 
-// 🔥 BLOCK / UNBLOCK
 window.toggleBlock = async (id, status)=>{
     await updateDoc(doc(db,"users",id),{
         blocked: !status
     });
 };
 
-// ================= LOGS =================
 function loadLogs(){
     const table = document.getElementById("logTable");
     table.innerHTML = "";
@@ -124,11 +115,9 @@ function loadLogs(){
     });
 }
 
-// ================= CHARTS =================
 let roleChart, purposeChart, dailyChart;
 
 function renderCharts(){
-    // ===== ROLE =====
     const roles = {visitor:0, student:0, faculty:0};
     allUsers.forEach(u=>{
         const r = (u.role || "").trim().toLowerCase();
@@ -146,7 +135,6 @@ function renderCharts(){
         }
     });
 
-    // ===== PURPOSE =====
     const purposeCount = {};
     allLogs.forEach(l=>{
         const p = l.purpose || "Unknown";
@@ -162,7 +150,6 @@ function renderCharts(){
         }
     });
 
-    // ===== DAILY =====
     const daily = {};
     allLogs.forEach(l=>{
         if(!l.loginTime || !l.loginTime.toDate) return;
