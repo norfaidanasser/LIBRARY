@@ -5,7 +5,6 @@ body {
     color: #2c2c2c;
 }
 
-/* ===== SIDEBAR ===== */
 .sidebar {
     width: 240px;
     height: 100vh;
@@ -52,7 +51,7 @@ body {
     transform: translateX(5px);
 }
 
-/* ===== HEADER ===== */
+
 .header {
     margin-left: 240px;
     width: calc(100% - 240px);
@@ -87,7 +86,6 @@ body {
     color: #555;
 }
 
-/* ===== BUTTON ===== */
 .logoutBtn {
     background: #dc2626;
     color: white;
@@ -103,29 +101,28 @@ body {
     background: #b91c1c;
 }
 
-/* ===== MAIN DASHBOARD ===== */
 .dashboard {
     margin-left: 240px;
     width: calc(100% - 240px);
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center; /* center the content */
+    align-items: center; 
     gap: 2rem;
 }
 
-/* ===== TODAY'S OVERVIEW LANDSCAPE ===== */
+
 .stats {
-    display: flex;           /* horizontal row */
-    gap: 20px;               /* space between cards */
-    overflow-x: auto;        /* allow horizontal scroll on small screens */
-    padding-bottom: 10px;    /* extra space for scrollbar */
+    display: flex;           
+    gap: 20px;              
+    overflow-x: auto;        
+    padding-bottom: 10px;   
     justify-content: flex-start;
-    flex-wrap: nowrap;       /* no wrap */
+    flex-wrap: nowrap;      
 }
 
 .statCard {
-    flex: 0 0 220px;         /* fixed width per card */
+    flex: 0 0 220px;         
     background: white;
     padding: 25px;
     border-radius: 16px;
@@ -139,7 +136,6 @@ body {
     box-shadow: 0 15px 30px rgba(0,0,0,0.12);
 }
 
-/* optional: hide ugly scrollbar for modern browsers */
 .stats::-webkit-scrollbar {
     height: 6px;
 }
@@ -151,7 +147,6 @@ body {
     border-radius: 3px;
 }
 
-/* responsive: adjust card size on smaller screens */
 @media (max-width: 768px) {
     .stats {
         gap: 15px;
@@ -159,11 +154,10 @@ body {
     }
 
     .statCard {
-        flex: 0 0 180px;  /* smaller card for mobile */
+        flex: 0 0 180px;  
     }
 }
 
-/* ===== TABLE ===== */
 .tableContainer {
     background: white;
     border-radius: 16px;
@@ -171,7 +165,7 @@ body {
     padding: 25px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     width: 100%;
-    max-width: 1100px; /* same as stats */
+    max-width: 1100px; 
 }
 
 .tableHeader {
@@ -210,7 +204,6 @@ tr:hover {
     transform: scale(1.01);
 }
 
-/* ===== SECTIONS ===== */
 .contentSection {
     display: none;
 }
@@ -219,7 +212,6 @@ tr:hover {
     display: block;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .sidebar {
         display: none;
@@ -239,7 +231,6 @@ tr:hover {
         max-width: 100%;
     }
 }
-/*stats*/
 .chartsGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -272,7 +263,7 @@ tr:hover {
     border-radius: 16px;
 }
 
-/* stat card improvement */
+
 .statCard p {
     font-size: 1.8rem;
     font-weight: bold;
