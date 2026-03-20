@@ -1,13 +1,11 @@
-/* Reset & Body */
 *{ margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; }
 body{
     background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url("campus.jpg") center/cover no-repeat;
 }
 
-/* Header */
 .header{
     background: linear-gradient(#e4b471, #4f2005);
-    color: #ffffff;      /* light beige text */
+    color: #ffffff;      
     text-align: center;
     padding: 25px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -23,7 +21,6 @@ body{
     opacity: 0.9;
 }
 
-/* Main */
 .main{
     flex:1;
     display:flex;
@@ -32,9 +29,8 @@ body{
     padding:30px;
 }
 
-/* Login Card */
 .loginCard{
-    background:#fff8f0; /* soft off-white */
+    background:#fff8f0; 
     padding:35px;
     border-radius:16px;
     box-shadow:0 8px 30px rgba(0,0,0,0.12);
@@ -42,7 +38,6 @@ body{
     text-align:center;
 }
 
-/* Tabs */
 .tabs{
     display:flex;
     margin-bottom:20px;
@@ -51,7 +46,7 @@ body{
     flex:1;
     padding:12px;
     cursor:pointer;
-    background:#ecd6c0;  /* light brown */
+    background:#ecd6c0;  
     border:none;
     border-radius:8px 8px 0 0;
     font-weight:500;
@@ -59,11 +54,11 @@ body{
     color:#5b3a29;
 }
 .tabBtn.active{
-    background:#642b09;  /* darker brown for active tab */
+    background:#642b09;  
     color:white;
 }
 
-/* Fields */
+
 .field{ text-align:left; margin-bottom:15px; }
 .field label{ display:block; font-weight:500; margin-bottom:5px; color:#5b3a29; }
 .field input, .field select{
@@ -81,13 +76,13 @@ body{
     box-shadow:0 0 4px rgba(181,128,82,0.5);
 }
 
-/* Button */
+
 .loginBtn{
     width:100%;
     padding:14px;
     border:none;
     border-radius:8px;
-    background:#642b09;  /* main brown button */
+    background:#642b09;  
     color:white;
     font-size:16px;
     font-weight:500;
@@ -96,19 +91,17 @@ body{
     transition:0.25s;
 }
 .loginBtn:hover{
-    background:#642b09;  /* darker brown on hover */
+    background:#642b09;  
     transform:scale(1.03);
 }
 
-/* Card icon (optional) */
 .icon{
     font-size:50px;
     margin-bottom:10px;
 }
 
-/* Admin Button */
 .adminBtn {
-    background-color: #4a2005;  /* darker brown */
+    background-color: #4a2005; 
     color: #fff;
     border: none;
     padding: 12px 20px;
@@ -120,52 +113,40 @@ body{
 }
 
 .adminBtn:hover {
-    background-color: #642b09; /* main brown theme */
+    background-color: #642b09;
 }
 
-/* --- NEW FIXES / ADDED STYLES --- */
-
-/* Ensure program/college dropdown fits container */
 .field select {
     width: 100%;
-    overflow: hidden;       /* prevent overflow */
+    overflow: hidden;      
     text-overflow: ellipsis;
 }
 
-/* Wrap long text inside select options */
 select option {
     white-space: normal;
 }
 
 #regProgram {
-    /* Layout & Sizing */
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    padding: 12px;           /* Matched to your .field class */
-    
-    /* Colors & Border */
-    background: #fff3e6;    /* Matched cream background */
-    color: #5b3a29;         /* Matched brown text color */
-    border: 1px solid #d9b89c; /* Matched soft brown border */
-    border-radius: 8px;     /* Matched rounded corners */
-    
-    /* Typography */
+    padding: 12px;          
+    background: #fff3e6;   
+    color: #5b3a29;         
+    border: 1px solid #d9b89c;
+    border-radius: 8px;    
     font-size: 14px;
     font-family: inherit;
-    
-    /* Interactive States */
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-/* Focus State to match your .field input:focus */
 #regProgram:focus {
     border-color: #361900;
     box-shadow: 0 0 4px rgba(181, 128, 82, 0.5);
 }
 
-/* Cleanup for long text */
+
 #regProgram option {
     white-space: normal;
 }
