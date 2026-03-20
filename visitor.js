@@ -11,7 +11,6 @@ import {
     doc 
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-// 🔥 Firebase Config
 const firebaseConfig = {
   apiKey: "AIzaSyAx38EXoudizcyiHRsIz7oLR3VmRboo9Dk",
   authDomain: "neulibrary-2845c.firebaseapp.com",
@@ -21,14 +20,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// ================= REGISTER =================
 window.registerUser = async function(){
     const name = document.getElementById('regName').value.trim();
     const email = document.getElementById('regEmail').value.trim();
     const role = document.getElementById('regRole').value;
     const password = document.getElementById('regPassword').value;
-
-    // 🔥 HANDLE PROGRAM (STUDENT vs FACULTY)
+    
     let program = document.getElementById('regProgram').value;
 
     if(role === "faculty"){
@@ -53,7 +50,6 @@ window.registerUser = async function(){
 
         alert("Registered successfully!");
 
-        // clear fields
         regName.value="";
         regEmail.value="";
         regRole.value="";
@@ -69,7 +65,7 @@ window.registerUser = async function(){
     }
 };
 
-// ================= LOGIN =================
+
 window.loginUser = async function(){
     const role = document.getElementById('loginRole').value;
     const email = document.getElementById('loginEmail').value.trim();
@@ -98,7 +94,7 @@ window.loginUser = async function(){
         const userDoc = snap.docs[0];
         const user = userDoc.data();
 
-        // 🔥 BLOCK CHECK
+        
         if(user.blocked){
             alert("You are blocked by admin!");
             return;
@@ -106,13 +102,13 @@ window.loginUser = async function(){
 
         const userRef = doc(db,"users",userDoc.id);
 
-        // 🔥 UPDATE USER STATUS
+ 
         await updateDoc(userRef,{
             loginTime: serverTimestamp(),
             purpose: purpose
         });
 
-        // 🔥 SAVE LOGIN LOG
+
         await addDoc(collection(db,"logs"),{
             name: user.name,
             email: user.email,
@@ -124,7 +120,6 @@ window.loginUser = async function(){
 
         alert(`Welcome ${user.name}!`);
 
-        // 🔥 REDIRECT
         window.location.href = "visitor_dashboard.html";
 
     } catch(err){
