@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEU Library Admin Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <h2 class="logo">NEU Admin</h2>
+    <ul class="navLinks">
+        <li onclick="showSection('dashboardSection', this)" class="active">📊 Dashboard</li>
+        <li onclick="showSection('statsSection', this)">📈 Stats</li>
+        <li onclick="showSection('logsSection', this)">📋 Logs</li>
+        <li onclick="showSection('usersSection', this)">👤 Users</li>
+    </ul>
+</aside>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="headerContent">
+        <div class="headerInfo">
+            <h1>NEU Library Admin Dashboard</h1>
+        </div>
+
+        <div class="headerActions">
+            <span class="adminStatus">Admin</span>
+            <button class="logoutBtn" onclick="logoutAdmin()">Logout</button>
+        </div>
+    </div>
+</header>
+
+<!-- MAIN -->
+<main class="dashboard">
+
+    <!-- DASHBOARD -->
+    <section id="dashboardSection" class="contentSection active">
+        <section class="statsGrid">
+            <div class="statsHeader">
+                <h2>Today's Overview</h2>
+            </div>
+
+            <div class="stats">
+                <div class="statCard">
+                    <span class="statIcon">👥</span>
+                    <h3>Visitors</h3>
+                    <p class="statValue" id="visitorsToday">0</p>
+                </div>
+
+                <div class="statCard">
+                    <span class="statIcon">🎓</span>
+                    <h3>Students</h3>
+                    <p class="statValue" id="studentsToday">0</p>
+                </div>
+
+                <div class="statCard">
+                    <span class="statIcon">👨‍🏫</span>
+                    <h3>Faculty</h3>
+                    <p class="statValue" id="facultyToday">0</p>
+                </div>
+
+                <div class="statCard">
+                    <span class="statIcon">📊</span>
+                    <h3>Total</h3>
+                    <p class="statValue" id="totalVisits">0</p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+   <!-- STATS -->
+<section id="statsSection" class="contentSection">
+    <h2>Statistics Overview</h2>
+
+    <div class="chartsGrid">
+        <div class="chartCard">
+            <h3>Visitors by Role</h3>
+            <canvas id="roleChart"></canvas>
+        </div>
+
+        <div class="chartCard">
+            <h3>Visitors by Purpose</h3>
+            <canvas id="purposeChart"></canvas>
+        </div>
+
+        <div class="chartCard">
+            <h3>Daily Visits</h3>
+            <canvas id="dailyChart"></canvas>
+        </div>
+    </div>
+</section>
+
+    <!-- LOGS -->
+    <section id="logsSection" class="contentSection">
+        <div class="tableContainer">
+            <div class="tableHeader">
+                <h2>Login Logs</h2>
+            </div>
+
+            <div class="tableWrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Email</th>
+                            <th>Login Time</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody id="logTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- USERS -->
+    <section id="usersSection" class="contentSection">
+        <div class="tableContainer">
+            <div class="tableHeader">
+                <h2>Registered Users</h2>
+            </div>
+
+            <div class="tableWrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Program</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script type="module" src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+/* Reset */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+}
+
+/* Background */
+body{
+background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url("campus.jpg") center/cover no-repeat;
+}
+
+/* Header */
+.header{
+background:linear-gradient(#e4b471,#4f2005);
+color:#ffffff;
+text-align:center;
+padding:25px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.header h1{
+font-size:28px;
+font-weight:600;
+margin-bottom:5px;
+}
+
+.header p{
+font-size:16px;
+opacity:0.9;
+}
+
+/* Main container */
+.main{
+height:80vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* Login Card */
+.loginCard{
+background:#fff8f0;
+padding:35px;
+border-radius:16px;
+box-shadow:0 8px 30px rgba(0,0,0,0.12);
+width:380px;
+text-align:center;
+}
+
+/* Title */
+.loginCard h2{
+margin-bottom:20px;
+color:#642b09;
+}
+
+/* Fields */
+.field{
+text-align:left;
+margin-bottom:15px;
+}
+
+.field label{
+display:block;
+font-weight:500;
+margin-bottom:5px;
+color:#5b3a29;
+}
+
+.field input{
+width:100%;
+padding:12px;
+border:1px solid #d9b89c;
+border-radius:8px;
+font-size:14px;
+background:#fff3e6;
+}
+
+.field input:focus{
+border-color:#642b09;
+outline:none;
+}
+
+/* Login Button */
+.loginBtn{
+width:100%;
+padding:14px;
+border:none;
+border-radius:8px;
+background:#642b09;
+color:white;
+font-size:16px;
+font-weight:500;
+cursor:pointer;
+margin-top:10px;
+transition:0.25s;
+}
+
+.loginBtn:hover{
+background:#4a2005;
+transform:scale(1.03);
+}
+
+/* Back Button */
+.backBtn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:#ecd6c0;
+color:#5b3a29;
+font-weight:500;
+cursor:pointer;
+margin-top:10px;
+transition:0.25s;
+}
+
+.backBtn:hover{
+background:#d8bda3;
+}

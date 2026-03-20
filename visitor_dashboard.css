@@ -1,0 +1,228 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+/* BODY */
+
+body{
+background:#fcf1df;
+}
+
+/* HEADER */
+
+.header{
+background:linear-gradient(#e4b471, #4f2005); /* Dark brown */
+color:white;
+text-align:center;
+padding:25px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.header h1{
+font-size:28px;
+}
+
+.header p{
+font-size:16px;
+opacity:0.9;
+}
+
+.logSection h2{
+ text-align: center;
+}
+
+/* DASHBOARD GRID */
+
+.dashboard{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+padding:30px;
+}
+
+/* CARDS */
+
+.card{
+background:#fff9f1;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 40px rgba(0, 0, 0, 0.235);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* CARD TITLES */
+
+.card h2{
+margin-bottom:15px;
+color:#5f2504;
+}
+
+/* SELECT */
+
+select{
+width:100%;
+padding:10px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #d9b89c;
+background:#fff3e6;
+}
+
+/* OTHER PURPOSE INPUT */
+
+#otherPurpose{
+background:#fff3e6;
+}
+
+/* BUTTONS */
+
+.btn{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:8px;
+font-size:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+/* CHECK-IN BUTTON */
+
+.checkinBtn{
+background:#2e7e00;
+color:white;
+}
+
+.checkinBtn:hover{
+background:#3f5623;
+}
+
+/* CHECK-OUT BUTTON */
+
+.checkoutBtn{
+background:#b50000;
+color:white;
+}
+
+.checkoutBtn:hover{
+background:#670000;
+}
+
+/* LOG TABLE */
+
+.logSection{
+padding:30px;
+}
+
+.logSection h2{
+margin-bottom:15px;
+color:#642b09;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+border-radius:10px;
+overflow:hidden;
+}
+
+th{
+background:#642b09;
+color:white;
+padding:12px;
+}
+
+td{
+padding:10px;
+border-bottom:1px solid #eee;
+text-align:center;
+}
+/* Container styling */
+.staffContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* space between cards */
+  justify-content: center; /* center the cards */
+}
+
+/* Individual staff card styling */
+.staffCard {
+  background-color: #fff9f1;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  width: 220px; /* fixed width for consistency */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.235);
+  transition: transform 0.3s;
+  
+}
+
+.staffCard:hover {
+  transform: translateY(-5px);
+}
+
+/* Staff image styling */
+.staffImg {
+  width: 120px; /* size of image */
+  height: 120px; /* make square */
+  object-fit: cover; /* cover the frame nicely */
+  border-radius: 50%; /* make it circular */
+  margin-bottom: 10px;
+}
+
+/* Text styling */
+.staffRole {
+  font-weight: 500;
+  color: #555;
+  margin: 5px 0;
+}
+
+.staffEmail {
+  font-size: 0.9rem;
+  color: #888;
+  word-break: break-word; /* prevent long emails from breaking layout */
+}
+/* LOGOUT BUTTON SA HEADER */
+.logoutTopBtn{
+  position:absolute;
+  top:20px;
+  right:30px;
+  padding:6px 12px;
+  font-size:13px;
+  background:#b50000;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.logoutTopBtn:hover{
+  background:#670000;
+}
+
+/* FIX HEADER POSITIONING */
+.header{
+  position:relative;
+}
+
+/* RULES LIST FIX */
+.rulesCard ul{
+  padding-left:20px;
+  line-height:1.8;
+}
+
+/* MAS MALINIS NA SPACING */
+.dashboard{
+  max-width:900px;
+  margin:auto;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NEU Library Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="visitor_dashboard.css">
+
+</head>
+
+<body>
+
+<header class="header">
+  <h1>NEU Library Dashboard</h1>
+  <p id="welcomeMsg">Welcome to NEU Library!</p>
+
+  <!-- SMALL LOGOUT BUTTON -->
+  <button class="logoutTopBtn" onclick="checkOut()">Logout</button>
+</header>
+
+<div class="dashboard">
+
+  <!-- LIBRARY RULES -->
+  <div class="card rulesCard">
+    <h2>Library Rules</h2>
+    <ul>
+      <li>Maintain silence inside the library</li>
+      <li>No food or drinks allowed</li>
+      <li>Return borrowed books on time</li>
+      <li>Respect library staff and visitors</li>
+      <li>Mobile phones must be on silent mode</li>
+      <li>Handle books and equipment carefully</li>
+      <li>Group discussions only in designated areas</li>
+      <li>Keep the library clean at all times</li>
+      <li>Report damaged books to library staff</li>
+      <li>Follow library opening and closing hours</li>
+      <li>Do not reserve seats for long periods</li>
+      <li>Follow all library policies and guidelines</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- FACULTY & STAFF SECTION -->
+<div class="logSection">
+  <h2>Library Faculty & Staff</h2>
+  <div class="staffContainer">
+
+    <div class="staffCard">
+      <img src="Luna.jpg" class="staffImg">
+      <h3>Luna Lovegood</h3>
+      <p class="staffRole">Head Librarian</p>
+      <p class="staffEmail">luna.lovegood@neu.edu</p>
+    </div>
+
+    <div class="staffCard">
+      <img src="Hermione.jpg" class="staffImg">
+      <h3>Hermione Granger</h3>
+      <p class="staffRole">Assistant Librarian</p>
+      <p class="staffEmail">h.granger@neu.edu</p>
+    </div>
+
+    <div class="staffCard">
+      <img src="Ron.jpg" class="staffImg">
+      <h3>Ronald Weasley</h3>
+      <p class="staffRole">Library Staff</p>
+      <p class="staffEmail">ron.weasley@neu.edu</p>
+    </div>
+
+    <div class="staffCard">
+      <img src="Harry.jpg" class="staffImg">
+      <h3>Harry Potter</h3>
+      <p class="staffRole">IT Support</p>
+      <p class="staffEmail">harry.potter@neu.edu</p>
+    </div>
+
+  </div>
+</div>
+
+<script src="visitor_dashboard.js"></script>
+</body>
+</html>
