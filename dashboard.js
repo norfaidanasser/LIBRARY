@@ -169,7 +169,6 @@ function renderCharts(){
     });
 }
 
-// ================= LOGOUT =================
 window.logoutAdmin = function(){
     window.location.href = "admin_login.html";
 };
